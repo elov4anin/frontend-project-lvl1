@@ -1,4 +1,4 @@
-name: GitHub Actions
+name: lint and tests
 on:
   push:
     branches:
