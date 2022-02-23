@@ -1,19 +1,23 @@
 name: lint and tests
 on:
   push:
-    branches:
-      - '**'
-    tags:
-      - '**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - uses: actions/checkout@v2
-      - name: Do check eslint
-        uses: hexlet/project-action@release
-      - run: make lint
+      - uses: actions/setup-node@v1
+        name: "setup -node"
+        with:
+          node-version: "16.13.2"
+
+      - name: "Do check packages"
+        run: make install
+
+      - name: "Doing eslint check"
+        run: make lint
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
