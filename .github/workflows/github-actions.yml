@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         name: "setup -node"
         with:
           node-version: "16.13.2"
