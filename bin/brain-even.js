@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { doQuestion } from '../src/functions/do-question.function.js'
 import { welcomeAction } from '../src/cli.js'
+import { startBrainEvenGame } from '../src/even.js'
 
 welcomeAction()
-export const doQuestionNumber = () => doQuestion('')
+startBrainEvenGame()
