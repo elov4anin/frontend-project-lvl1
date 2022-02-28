@@ -1,9 +1,7 @@
-import { doQuestion } from './functions/do-question.function.js'
+import { sayWelcome } from './functions/welcome.function.js'
 import { sayHello } from './functions/hello.function.js'
 
-const doQuestionName = () => doQuestion('May I have your name?: ')
-
 export const welcomeAction = () => {
+    sayWelcome()
     sayHello()
-    console.log(`Hello, ${doQuestionName()}`)
 }
