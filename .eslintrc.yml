@@ -10,6 +10,8 @@ rules:
   no-console: 0
   quotes: 1
   semi: 0
+  indent: ["error", 4]
+  import/prefer-default-export: 0
   import/extensions:
     - error
     - ignorePackages

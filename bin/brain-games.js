@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { doQuestion } from './cli.js'
+import { welcomeAction } from '../src/cli.js'
 
-console.log('Welcome to the Brain Games!')
-console.log(`Hello, ${doQuestion()}`)
+welcomeAction()
