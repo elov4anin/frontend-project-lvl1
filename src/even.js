@@ -1,5 +1,6 @@
 import { doQuestion } from './functions/do-question.function.js'
 import { NO, YES } from './constants/constants.js'
+import { sayWelcome } from './functions/welcome.function.js'
 
 const doQuestionNumber = () => doQuestion('Your answer: ')
 
@@ -17,6 +18,8 @@ const answers = {
 }
 
 export const startBrainEvenGame = () => {
+    sayWelcome()
+    const name = doQuestion('May I have your name? ')
     console.info('Answer "yes" if the number is even, otherwise answer "no"')
     let rightCounts = 0
     const newGame = () => {
@@ -28,12 +31,12 @@ export const startBrainEvenGame = () => {
         if (numberIsEvent !== answers[answer.toLowerCase()]) {
             rightCounts = 0
             console.log(`'${answer}' is wrong answer ;(. Correct answer was '${numberIsEvent ? YES : NO}'.`)
-            console.log('Let\'s try again, Bill!')
+            console.log(`Let's try again, ${name}!`)
             return false
         }
         console.log('Correct!')
         if (rightCounts === 3) {
-            console.log('Congratulations, Bill!')
+            console.log(`Congratulations, ${name}!`)
             return true
         }
         return newGame()
